@@ -14,3 +14,6 @@ used for HDX experiments, and is what I (Spencer) used to run Upside HDX simulat
 2QKE corresponds to the dimeric gs found in the PDB, but with only one monomer, whereas the fs state was obtained 
 from the mutated structure from Andy's old Science paper, but mutated *back to the wt sequence*. These were
 also used by Adam for DGA simulations.
+
+`remd_**.pdb` and `d91r_**.pdb` files are intermediates structures from REMD simulations of the D91R mutant used 
+to seed more REMD simulations.

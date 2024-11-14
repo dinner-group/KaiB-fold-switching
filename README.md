@@ -13,23 +13,39 @@ This repository contains analysis scripts and notebooks for fold-switching of Ka
 - `src` contains Python files with useful loading and analysis functions. Mostly used in the `dga` analysis scripts and notebooks.
 
 ## Requirements
-See [https://github.com/sosnicklab/upside2-md](https://github.com/sosnicklab/upside2-md) for how to install the Upside MD engine.
-The following packages are used for analysis and visualization:
-- `python=3.11`
-- `numpy`
-- `scipy`
-- `mdtraj`
-- `MDAnalysis`
-- `pyemma`
-- `scikit-learn`
-- `matplotlib`
+Upside2 ([https://github.com/sosnicklab/upside2-md/tree/master](https://github.com/sosnicklab/upside2-md/tree/master)) is
+used for coarse-grained simulations. Follow the link for download and installation instructions. Upside requires
+a working Python installation to run several of its scripts.
+
+Python 3.11 was used for analysis. To recreate the conda environment,
+see `requirements.yml` for the full list.
+The important packages used are
+- `numpy=1.25`
+- `matplotlib=3.7`
 - `seaborn`
-- `seaborn`
+- `scipy=1.11`
+- `scikit-learn=1.3`
+- `mdtraj=1.9.9`
+- `pyemma=2.5`
+- `pymbar>=4.0` for MBAR (to reweight REMD simulations)
 - `ivac` for dimensionality reduction: [https://github.com/chatipat/ivac](https://github.com/chatipat/ivac) (see [here](https://pubs.acs.org/doi/full/10.1021/acs.jpcb.0c06477))
 - `extq` for calculation of kinetic quantities: [https://github.com/chatipat/extq](https://github.com/chatipat/extq) (see [here](https://pmc.ncbi.nlm.nih.gov/articles/PMC8903024/) and [here](https://pubs.aip.org/aip/jcp/article-abstract/160/8/084108/3267205/Accurate-estimates-of-dynamical-statistics-using?redirectedFrom=fulltext))
-- `pymbar` for REMD reweighting
 
 Most packages (except `ivac` and `extq`) can be installed via `conda` or `pip`.
+Plotting and some analysis was performed in Jupyter notebooks (`notebooks` directory).
+
+## Scripts
+General analysis scripts in `scripts` for computing 
+energies, CVs, etc. Some of these rely on the Upside analysis scripts and so you will
+need to include the appropriate path.
+
+The scripts `run_all.py` and `run_md3.py` are loose wrapper scripts around the Upside
+scripts and can be used to run either simple unbiased simulations or T-REMD simulations (see `remd`
+directory for more details). These both operate with command line arguments; run 
+`python run_all.py -h` for more details.
+
+## Data
+Data to reproduce plots and analysis has been deposited on [Zenodo](https://doi.org/10.5281/zenodo.14160033). The directory structure is similar to that of this repository and file names should correspond to those used in the Jupyter notebooks.
 
 ## Cite this work
 If you found this work useful in your own research, please cite the following work:
